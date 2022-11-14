@@ -7,3 +7,8 @@
 
 ## Game
 * Skala Simulator
+
+## Script
+```
+loadstring(game:HttpGet('https://raw.githubusercontent.com/AxolotlHack/Zalupa-Hub/main/Zalupa%20Hub.lua'))()
+```
