@@ -36,6 +36,7 @@ TextLabel.Parent = Frame_2
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.Size = UDim2.new(0, 393, 0, 40)
 TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Zalupa Hub"
 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.TextSize = 14.000
 
@@ -46,7 +47,7 @@ TextBox.BackgroundColor3 = Color3.fromRGB(227, 227, 227)
 TextBox.Position = UDim2.new(0.229007632, 0, 0.254452914, 0)
 TextBox.Size = UDim2.new(0, 207, 0, 49)
 TextBox.Font = Enum.Font.SourceSans
-TextBox.Text = ""
+TextBox.Text = "Write the name of the mini-game"
 TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextBox.TextSize = 14.000
 
@@ -57,6 +58,7 @@ TextButton.BackgroundColor3 = Color3.fromRGB(227, 227, 227)
 TextButton.Position = UDim2.new(0.328244269, 0, 0.458015263, 0)
 TextButton.Size = UDim2.new(0, 134, 0, 37)
 TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Start"
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 14.000
 
