@@ -7,6 +7,7 @@
 
 ## Game
 * Skala Simulator
+* Mine Racer
 
 ## Script
 ```
