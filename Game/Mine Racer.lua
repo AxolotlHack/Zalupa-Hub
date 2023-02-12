@@ -1,3 +1,115 @@
+--[[ 
+
+Argument
+.Value
+
+Coins
+game.Players.LocalPlayer.Data.Coins
+
+Rebirths
+game.Players.LocalPlayer.Data.Rebirths
+
+Wins
+game.Players.LocalPlayer.Data.Wins
+
+Clicks
+game.Players.LocalPlayer.Data.Clicks
+
+MoonCoins
+game.Players.LocalPlayer.Data.MoonCoins
+
+Candy
+game.Players.LocalPlayer.Data.Candy
+
+Obby
+game.Players.LocalPlayer.Data.Obby
+
+Cooldown
+game.Players.LocalPlayer.Data.Cooldown
+
+Dig
+game.Players.LocalPlayer.Data.Dig
+
+Depth
+game.Players.LocalPlayer.Data.Depth
+
+Index
+game.Players.LocalPlayer.Data.Index
+]]
+
+-- Mine
+
+local ohString1 = "Mine"
+
+game:GetService("ReplicatedStorage").Remotes.mineEvent:FireServer(ohString1)
+
+-- Rebirth
+
+local ohString1 = "Rebirth"
+
+game:GetService("ReplicatedStorage").Remotes.rebirthEvent:FireServer(ohString1)
+
+-- Upgrade
+
+local ohString1 = "Dig"
+
+game:GetService("ReplicatedStorage").Remotes.upgradeEvent:FireServer(ohString1)
+
+--------------------------------------------------------------------------------
+
+local ohString1 = "Cooldown"
+
+game:GetService("ReplicatedStorage").Remotes.upgradeEvent:FireServer(ohString1)
+
+-- Play
+
+local ohString1 = "Ready"
+
+game:GetService("ReplicatedStorage").Remotes.joinEvent:FireServer(ohString1)
+
+--------------------------------------------------------------------------------
+
+local ohString1 = "Join"
+
+game:GetService("ReplicatedStorage").Remotes.joinEvent:FireServer(ohString1)
+
+
+-- Open Egg
+
+--[[
+0 = Coin 75
+1 = Coin 650
+2 = Coin 5к
+3 = Coin 25к
+4 = Coin 350к
+5 = Coin 6м
+6 = Coin 22.5м
+7 = Coin 20м
+8 = Coin 750м
+9 = Coin 2В
+10 = Coin 10В
+11 = Coin 150В
+Moon
+12 = MoonCoin 25к
+13 = MoonCoin 300к
+14 = MoonCoin 1м
+15 = MoonCoin 22м
+16 = MoonCoin 200м
+Candy
+17 = Coin 5В
+18 = Coin 50В
+]]--
+
+local ohString1 = "Open"
+local ohInstance2 = workspace.Eggs["0"]
+
+game:GetService("ReplicatedStorage").Remotes.requestEgg:FireServer(ohString1, ohInstance2)
+
+-- Codes
+local ohString1 = "SANTASLITTLEHELPERS"
+
+game:GetService("ReplicatedStorage").Remotes.codesEvent:FireServer(ohString1)
+
 -- Gui
 
 -- Instances:
@@ -236,7 +348,7 @@ ScrollingFrame.BackgroundTransparency = 0.500
 ScrollingFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
 ScrollingFrame.Position = UDim2.new(0.0675675645, 0, 0.249999985, 0)
 ScrollingFrame.Size = UDim2.new(0, 142, 0, 54)
-ScrollingFrame.CanvasPosition = Vector2.new(0, 301.111176)
+ScrollingFrame.CanvasPosition = Vector2.new(0, 0)
 ScrollingFrame.CanvasSize = UDim2.new(0, 0, 1.20000005, 0)
 ScrollingFrame.ScrollBarThickness = 10
 
