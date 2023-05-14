@@ -18,6 +18,7 @@ Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame.Position = UDim2.new(0.345919609, 0, 0.278514564, 0)
 Frame.Size = UDim2.new(0, 252, 0, 333)
+Frame.Visible = true
 Frame.Active = true
 Frame.Draggable = true
 
@@ -148,10 +149,11 @@ TrailersButton.MouseButton1Click:connect(function()
             if game:GetService("Players").LocalPlayer.PlayerGui.Interface.Score.Frame.Jobs.Visible == false then
                 wait(0.5)
                 game:GetService("ReplicatedStorage").Systems.Jobs.StartJob:InvokeServer("TrailerDelivery", "Dealership")
-                wait(25)
+                wait(23)
             elseif game:GetService("Players").LocalPlayer.PlayerGui.Interface.Score.Frame.Jobs.Visible == true then
                 for i,v in pairs(game:GetService("Workspace").Cars:GetDescendants()) do
                     if v.Name == "Owner" and v.Value == game.Players.LocalPlayer and game.Players.LocalPlayer:DistanceFromCharacter(game:GetService("Workspace").CompletionRegion.Primary.Position) > 25 then
+                        game:GetService("Workspace").CompletionRegion.Primary.Size=Vector3.new(100, 0.2, 100)
                         v.Parent:SetPrimaryPartCFrame(game:GetService("Workspace").CompletionRegion.Primary.CFrame*CFrame.new(0,5,-25))
                         wait(3)
                     end
@@ -188,10 +190,11 @@ FoodButton.MouseButton1Click:connect(function()
                     game:GetService("ReplicatedStorage").Systems.Jobs.StartJob:InvokeServer("FoodDelivery", v.Name)
                 end
             end
-            wait(25)
+            wait(23)
             elseif game:GetService("Players").LocalPlayer.PlayerGui.Interface.Score.Frame.Jobs.Visible == true then
                 for i,v in pairs(game:GetService("Workspace").Cars:GetDescendants()) do
                     if v.Name == "Owner" and v.Value == game.Players.LocalPlayer and game.Players.LocalPlayer:DistanceFromCharacter(game:GetService("Workspace").CompletionRegion.Primary.Position) > 25 then
+                        game:GetService("Workspace").CompletionRegion.Primary.Size=Vector3.new(100, 0.2, 100)
                         v.Parent:SetPrimaryPartCFrame(game:GetService("Workspace").CompletionRegion.Primary.CFrame*CFrame.new(0,5,0))
                         wait(3)
                     end
