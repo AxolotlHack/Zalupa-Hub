@@ -148,7 +148,7 @@ TrailersButton.MouseButton1Click:connect(function()
             if game:GetService("Players").LocalPlayer.PlayerGui.Interface.Score.Frame.Jobs.Visible == false then
                 wait(0.5)
                 game:GetService("ReplicatedStorage").Systems.Jobs.StartJob:InvokeServer("TrailerDelivery", "Dealership")
-                wait(23)
+                wait(25)
             elseif game:GetService("Players").LocalPlayer.PlayerGui.Interface.Score.Frame.Jobs.Visible == true then
                 for i,v in pairs(game:GetService("Workspace").Cars:GetDescendants()) do
                     if v.Name == "Owner" and v.Value == game.Players.LocalPlayer and game.Players.LocalPlayer:DistanceFromCharacter(game:GetService("Workspace").CompletionRegion.Primary.Position) > 25 then
@@ -188,7 +188,7 @@ FoodButton.MouseButton1Click:connect(function()
                     game:GetService("ReplicatedStorage").Systems.Jobs.StartJob:InvokeServer("FoodDelivery", v.Name)
                 end
             end
-            wait(23)
+            wait(25)
             elseif game:GetService("Players").LocalPlayer.PlayerGui.Interface.Score.Frame.Jobs.Visible == true then
                 for i,v in pairs(game:GetService("Workspace").Cars:GetDescendants()) do
                     if v.Name == "Owner" and v.Value == game.Players.LocalPlayer and game.Players.LocalPlayer:DistanceFromCharacter(game:GetService("Workspace").CompletionRegion.Primary.Position) > 25 then
