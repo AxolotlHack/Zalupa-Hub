@@ -86,7 +86,7 @@ TextLabel.BackgroundTransparency = 1.000
 TextLabel.Position = UDim2.new(0.498039216, 0, 0.0500000007, 0)
 TextLabel.Size = UDim2.new(0, 108, 0, 22)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Zlupa Hub"
+TextLabel.Text = "Zalupa Hub"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 20.000
 
