@@ -1,3 +1,5 @@
+-- Instances:
+
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local Frame_2 = Instance.new("Frame")
@@ -10,6 +12,7 @@ local GetButton = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
 local SublimeButton = Instance.new("TextButton")
 local UICorner_5 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
 local UICorner_6 = Instance.new("UICorner")
 
 --Properties:
@@ -77,8 +80,20 @@ SublimeButton.TextSize = 14.000
 
 UICorner_5.Parent = SublimeButton
 
+TextLabel.Parent = Frame_2
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.498039216, 0, 0.0500000007, 0)
+TextLabel.Size = UDim2.new(0, 108, 0, 22)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Zlupa Hub"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 20.000
+
 UICorner_6.CornerRadius = UDim.new(0, 10)
 UICorner_6.Parent = Frame
+
+-- Scripts
 
 -- Scripts:
 
