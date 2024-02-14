@@ -158,7 +158,7 @@ FarmButton.TextSize = 14.000
 local UIS = game:GetService('UserInputService')
 
 UIS.InputEnded:connect(function(input)
-	if input.KeyCode == Enum.KeyCode.RightControl then --Место Таб поставте другую клавишу )
+	if input.KeyCode == Enum.KeyCode.RightControl then
 		if Frame.Visible == true then
 			Frame.Visible = false
 		else
@@ -198,8 +198,13 @@ TrailersButton.MouseButton1Click:connect(function()
             wait()
             if game:GetService("Players").LocalPlayer.PlayerGui.Score.Frame.Jobs.Visible == false then
                 wait(0.5)
-                game:GetService("ReplicatedStorage").Systems.Jobs.StartJob:InvokeServer("TrailerDelivery", "6")
-                wait(23)
+                local numt = math.random(1,9)
+                for i,v in pairs(game:GetService("Workspace").Jobs.TrailerDelivery.StartPoints:GetChildren()) do
+                    if i == numt then
+                        game:GetService("ReplicatedStorage").Systems.Jobs.StartJob:InvokeServer("TrailerDelivery", v.Name)
+                    end
+                end
+                wait(10)
             elseif game:GetService("Players").LocalPlayer.PlayerGui.Score.Frame.Jobs.Visible == true then
                 for i,v in pairs(game:GetService("Workspace").Cars:GetDescendants()) do
                     if v.Name == "Owner" and v.Value == game.Players.LocalPlayer and game.Players.LocalPlayer:DistanceFromCharacter(game:GetService("Workspace").CompletionRegion.Primary.Position) > 25 then
@@ -235,13 +240,13 @@ FoodButton.MouseButton1Click:connect(function()
             wait()
             if game:GetService("Players").LocalPlayer.PlayerGui.Score.Frame.Jobs.Visible == false then
                 wait(0.5)
-                local num = math.random(1,7)
+                local numf = math.random(1,7)
                 for i,v in pairs(game:GetService("Workspace").Jobs.FoodDelivery.StartPoints:GetChildren()) do
-                    if i == num then
+                    if i == numf then
                     game:GetService("ReplicatedStorage").Systems.Jobs.StartJob:InvokeServer("FoodDelivery", v.Name)
                 end
             end
-            wait(23)
+            wait(10)
             elseif game:GetService("Players").LocalPlayer.PlayerGui.Score.Frame.Jobs.Visible == true then
                 for i,v in pairs(game:GetService("Workspace").Cars:GetDescendants()) do
                     if v.Name == "Owner" and v.Value == game.Players.LocalPlayer and game.Players.LocalPlayer:DistanceFromCharacter(game:GetService("Workspace").CompletionRegion.Primary.Position) > 25 then
