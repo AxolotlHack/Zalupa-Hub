@@ -17,12 +17,13 @@ local FarmButton = Instance.new("TextButton")
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 Frame.Parent = ScreenGui
-Frame.Active = true
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0.345999986, 0, 0.278514564, 0)
 Frame.Size = UDim2.new(0, 252, 0, 333)
+Frame.Active = true
+Frame.Draggable = true
 
 MainButton.Name = "MainButton"
 MainButton.Parent = Frame
@@ -169,17 +170,21 @@ end)
 MainButton.MouseButton1Click:connect(function()
     if main.Visible == false then
         main.Visible = true
-    elseif Farm.Visible == true then
-        Farm.Visible = false
+    elseif farm.Visible == true then
+        farm.Visible = false
     end
 end)
 FarmButton.MouseButton1Click:connect(function()
-    if Farm.Visible == false then
-        Farm.Visible = true
+    if farm.Visible == false then
+        farm.Visible = true
     elseif main.Visible == true then
         main.Visible = false
     end
 end)
+
+getfenv().Trailers = false
+getfenv().Food = false
+getfenv().Choco = false
 
 TrailersButton.MouseButton1Click:connect(function()
     if getfenv().Trailers == false then
@@ -212,6 +217,7 @@ TrailersButton.MouseButton1Click:connect(function()
         end
     else
         getfenv().Trailers = false
+        game:GetService("Players").LocalPlayer.PlayerGui.JobComplete.Enabled = true
         TrailersButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
         TrailersLabel.Text = 'Deliver Trailers / OFF'
     end
@@ -253,20 +259,21 @@ FoodButton.MouseButton1Click:connect(function()
         end
     else
         getfenv().Food = false
+        game:GetService("Players").LocalPlayer.PlayerGui.JobComplete.Enabled = true
         FoodButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
         FoodLabel.Text = 'Deliver Food / OFF'
     end
 end)
 
 ChocoButton.MouseButton1Click:connect(function()
-    if getfenv().Trailers == false then
+    if getfenv().Choco == false then
 
-        getfenv().Trailers = true
+        getfenv().Choco = true
 
         ChocoButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
         ChocoLabel.Text = 'Deliver Choco / ON'
 
-        while getfenv().Trailers do
+        while getfenv().Choco do
             wait()
             if game:GetService("Players").LocalPlayer.PlayerGui.Score.Frame.Jobs.Visible == false then
                 wait(0.5)
@@ -288,7 +295,8 @@ ChocoButton.MouseButton1Click:connect(function()
             end
         end
     else
-        getfenv().Trailers = false
+        getfenv().Choco = false
+        game:GetService("Players").LocalPlayer.PlayerGui.JobComplete.Enabled = true
         ChocoButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
         ChocoLabel.Text = 'Deliver Choco / OFF'
     end
