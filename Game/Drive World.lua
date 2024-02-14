@@ -1,8 +1,3 @@
---[[
-    Chekpoint
-    game:GetService("Workspace").Races.DragStrip.Checkpoints["1"].Inner
-]]
-
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local main = Instance.new("Frame")
@@ -155,6 +150,7 @@ TrailersButton.MouseButton1Click:connect(function()
                 wait(0.5)
                 game:GetService("ReplicatedStorage").Systems.Jobs.StartJob:InvokeServer("TrailerDelivery", "6")
                 wait(23)
+            elseif game:GetService("Players").LocalPlayer.PlayerGui.Score.Frame.Jobs.Visible == true then
                 for i,v in pairs(game:GetService("Workspace").Cars:GetDescendants()) do
                     if v.Name == "Owner" and v.Value == game.Players.LocalPlayer and game.Players.LocalPlayer:DistanceFromCharacter(game:GetService("Workspace").CompletionRegion.Primary.Position) > 25 then
                         game:GetService("Workspace").CompletionRegion.Primary.Size=Vector3.new(100, 0.2, 100)
@@ -162,10 +158,9 @@ TrailersButton.MouseButton1Click:connect(function()
                         wait(3)
                     end
                 end
-            elseif game:GetService("Players").LocalPlayer.PlayerGui.Score.Frame.Jobs.Visible == true then
-                if game:GetService("Players").LocalPlayer.PlayerGui.Interface.JobComplete.Enabled == true then
+                if game:GetService("Players").LocalPlayer.PlayerGui.JobComplete.Enabled == true then
                     game:GetService("ReplicatedStorage").Systems.Jobs.CashBankedEarnings:FireServer()
-                    game:GetService("Players").LocalPlayer.PlayerGui.Interface.JobComplete.Enabled = false
+                    game:GetService("Players").LocalPlayer.PlayerGui.JobComplete.Enabled = false
                     game:GetService("Lighting").BackgroundBlur.Enabled = false
                 end
             end
@@ -187,7 +182,7 @@ FoodButton.MouseButton1Click:connect(function()
 
         while getfenv().Food do
             wait()
-            if game:GetService("Players").LocalPlayer.PlayerGui.Interface.Score.Frame.Jobs.Visible == false then
+            if game:GetService("Players").LocalPlayer.PlayerGui.Score.Frame.Jobs.Visible == false then
                 wait(0.5)
                 local num = math.random(1,7)
                 for i,v in pairs(game:GetService("Workspace").Jobs.FoodDelivery.StartPoints:GetChildren()) do
@@ -196,7 +191,7 @@ FoodButton.MouseButton1Click:connect(function()
                 end
             end
             wait(23)
-            elseif game:GetService("Players").LocalPlayer.PlayerGui.Interface.Score.Frame.Jobs.Visible == true then
+            elseif game:GetService("Players").LocalPlayer.PlayerGui.Score.Frame.Jobs.Visible == true then
                 for i,v in pairs(game:GetService("Workspace").Cars:GetDescendants()) do
                     if v.Name == "Owner" and v.Value == game.Players.LocalPlayer and game.Players.LocalPlayer:DistanceFromCharacter(game:GetService("Workspace").CompletionRegion.Primary.Position) > 25 then
                         game:GetService("Workspace").CompletionRegion.Primary.Size=Vector3.new(100, 0.2, 100)
@@ -204,9 +199,9 @@ FoodButton.MouseButton1Click:connect(function()
                         wait(3)
                     end
                 end
-                if game:GetService("Players").LocalPlayer.PlayerGui.Interface.JobComplete.Enabled == true then
+                if game:GetService("Players").LocalPlayer.PlayerGui.JobComplete.Enabled == true then
                     game:GetService("ReplicatedStorage").Systems.Jobs.CashBankedEarnings:FireServer()
-                    game:GetService("Players").LocalPlayer.PlayerGui.Interface.JobComplete.Enabled = false
+                    game:GetService("Players").LocalPlayer.PlayerGui.JobComplete.Enabled = false
                     game:GetService("Lighting").BackgroundBlur.Enabled = false
                 end
             end
