@@ -1,3 +1,8 @@
+--[[
+    Chekpoint
+    game:GetService("Workspace").Races.DragStrip.Checkpoints["1"].Inner
+]]
+
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local MainButton = Instance.new("TextButton")
@@ -307,3 +312,17 @@ ChocoButton.MouseButton1Click:connect(function()
         ChocoLabel.Text = 'Deliver Choco / OFF'
     end
 end)
+
+-- Anti Afk
+
+local bb=game:service'VirtualUser'
+local SSTGUI = game:GetService("StarterGui")
+
+game:service'Players'.LocalPlayer.Idled:connect(function()
+bb:CaptureController()bb:ClickButton2(Vector2.new())
+end)
+
+SSTGUI:SetCore("ChatMakeSystemMessage", {
+Text = "[Zalupa Hub] Anti Afk / ON";
+TextSize = 18
+})
